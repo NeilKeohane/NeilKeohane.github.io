@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Home Page</title>
+<title>Home</title>
 <style>
     @font-face {
         font-family: 'CustomFont';
@@ -66,12 +66,52 @@
         text-decoration: underline;
         color: yellow;
     }
+
+    .social-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Ensures vertical alignment */
+        gap: 20px; /* Space between icons */
+    }
+
+    .social-links a img:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    /* Specific styles for GitHub logo */
+    .social-links a img.github-logo {
+        width: 45px; /* Increased width */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+    /* Specific styles for LinkedIn logo */
+    .social-links a img.linkedin-logo {
+        width: 50px; /* Original size */
+        height: auto; /* Maintains aspect ratio */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+        .centered-content {
+            font-size: 32px;
+        }
+
+        .social-links a img.github-logo {
+            width: 80px; /* Adjusted size for smaller screens */
+        }
+
+        .social-links a img.linkedin-logo {
+            width: 40px; /* Adjusted size for smaller screens */
+        }
+    }
+
 </style>
 </head>
 <body>
     <div class="starfield">
         <!-- Stars -->
-        <!-- Added more variation in size, color, and starting positions -->
         <!-- Star 1 -->
         <div class="star" style="
             --size: 4px;
@@ -272,7 +312,6 @@
         --endY: calc(350px * 4);
         animation-duration: 5.9s;
         animation-delay: 2.3s;"></div>
-
         <!-- Star 21 -->
         <div class="star" style="
             --size: 5px;
@@ -376,7 +415,18 @@
     </div>
 
     <div class="centered-content">
-        <a href="resume.html" target="_blank">My Resume</a>
+        <a href="resume.html" target="_blank">Extended Resume</a>
+        <!-- Social Links Container -->
+        <div class="social-links">
+            <!-- GitHub Link with specific class -->
+            <a href="https://github.com/NeilKeohane" target="_blank" aria-label="GitHub">
+                <img src="github.png" alt="GitHub Logo" class="github-logo">
+            </a>
+            <!-- LinkedIn Link with specific class -->
+            <a href="https://www.linkedin.com/in/NeilFKeohane" target="_blank" aria-label="LinkedIn">
+                <img src="linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
+            </a>
+        </div>
     </div>
 </body>
 </html>
