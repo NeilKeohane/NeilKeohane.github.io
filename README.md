@@ -1,2 +1,2 @@
-# www.neilkeohane.github.io / www.neilkeohane.me
+# neilkeohane.github.io / neilkeohane.me
 My Personal Website
