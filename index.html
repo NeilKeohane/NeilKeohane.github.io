@@ -12,6 +12,12 @@
             src: url('custom-font.ttf') format('truetype');
         }
 
+        @font-face {
+            font-family: 'CustomFontBold';
+            src: url('custom-font-bold.ttf') format('truetype');
+            font-weight: bold;
+        }
+
         body {
             margin: 0;
             background-color: #0e1623; /* Blueish-grey background */
@@ -23,6 +29,8 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            border: 5px solid #ffffff; /* White border */
+            box-sizing: border-box; /* Include border in element's total width and height */
         }
 
         .container {
@@ -33,13 +41,13 @@
 
         .name {
             font-size: 36px;
-            font-family: 'CustomFont', sans-serif; /* Apply custom font */
+            font-family: 'CustomFontBold', sans-serif; /* Apply custom bold font */
             margin-bottom: 20px;
         }
 
         .description {
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 20px;
             font-family: 'CustomFont', sans-serif; /* Apply custom font */
         }
 
