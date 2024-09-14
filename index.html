@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'CustomFont';
@@ -11,518 +14,77 @@
 
         body {
             margin: 0;
-            overflow: hidden;
-            background-color: black;
-            font-family: 'CustomFont', sans-serif;
-        }
-
-        .starfield {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            perspective: 800px;
-        }
-
-        .star {
-            position: absolute;
-            width: var(--size);
-            height: var(--size);
-            background-color: var(--color);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            opacity: 0.9;
-            transform-origin: center;
-            animation: moveStar linear infinite;
-        }
-
-        @keyframes moveStar {
-            0% {
-                transform: translate3d(var(--startX), var(--startY), -800px) scale(0.5);
-            }
-            100% {
-                transform: translate3d(var(--endX), var(--endY), 800px) scale(2);
-            }
-        }
-
-        .centered-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            font-size: 48px;
+            background-color: #0e1623; /* Blueish-grey background */
+            font-family: Arial, sans-serif;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            text-align: center;
         }
 
-        .centered-content a {
-            color: white;
-            text-decoration: none;
-            font-size: 48px;
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
         }
 
-        .centered-content a:hover {
-            text-decoration: underline;
-            color: yellow;
+        .name {
+            font-size: 36px;
+            font-family: 'CustomFont', sans-serif; /* Apply custom font */
+            margin-bottom: 20px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-family: 'CustomFont', sans-serif; /* Apply custom font */
         }
 
         .social-links {
-            margin-top: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 20px;
+            font-size: 24px;
         }
 
-        .social-links a img {
-            width: 50px;
-            height: auto;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+        .social-links a {
+            color: #ffffff;
+            transition: color 0.3s ease;
         }
 
-        .social-links a img:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-
-        .social-links a img.github-logo {
-            width: 45px;
-            height: auto;
-        }
-
-        .social-links a img.mail-logo {
-            width: 55px;
-            height: auto;
-        }
-
-        .social-links a img.linkedin-logo {
-            width: 50px;
-            height: auto;
-        }
-
-        @media (max-width: 600px) {
-            .centered-content {
-                font-size: 32px;
-            }
-
-            .social-links a img.github-logo {
-                width: 80px;
-            }
-
-            .social-links a img.mail-logo {
-                width: 35px;
-            }
-
-            .social-links a img.linkedin-logo {
-                width: 40px;
-            }
+        .social-links a:hover {
+            color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <div class="starfield">
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffffff;
-            --startX: -200px;
-            --startY: -150px;
-            --endX: calc(-200px * 4);
-            --endY: calc(-150px * 4);
-            animation-duration: 6.5s;
-            animation-delay: 0s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #ffd700;
-            --startX: 300px;
-            --startY: -100px;
-            --endX: calc(300px * 4);
-            --endY: calc(-100px * 4);
-            animation-duration: 7.2s;
-            animation-delay: 0.3s;"></div>
-
-        <div class="star" style="
-            --size: 3px;
-            --color: #fffacd;
-            --startX: -350px;
-            --startY: 200px;
-            --endX: calc(-350px * 4);
-            --endY: calc(200px * 4);
-            animation-duration: 5.8s;
-            animation-delay: 0.6s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #ffffff;
-            --startX: 100px;
-            --startY: 250px;
-            --endX: calc(100px * 4);
-            --endY: calc(250px * 4);
-            animation-duration: 6.9s;
-            animation-delay: 0.9s;"></div>
-
-        <div class="star" style="
-            --size: 7px;
-            --color: #ffd700;
-            --startX: -150px;
-            --startY: -250px;
-            --endX: calc(-150px * 4);
-            --endY: calc(-250px * 4);
-            animation-duration: 7.5s;
-            animation-delay: 1.2s;"></div>
-
-        <div class="star" style="
-            --size: 2px;
-            --color: #fffacd;
-            --startX: 250px;
-            --startY: 150px;
-            --endX: calc(250px * 4);
-            --endY: calc(150px * 4);
-            animation-duration: 5.5s;
-            animation-delay: 1.5s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #ffffff;
-            --startX: -250px;
-            --startY: 50px;
-            --endX: calc(-250px * 4);
-            --endY: calc(50px * 4);
-            animation-duration: 8s;
-            animation-delay: 1.8s;"></div>
-
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffd700;
-            --startX: 200px;
-            --startY: -200px;
-            --endX: calc(200px * 4);
-            --endY: calc(-200px * 4);
-            animation-duration: 6.3s;
-            animation-delay: 2.1s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #fffacd;
-            --startX: -300px;
-            --startY: 100px;
-            --endX: calc(-300px * 4);
-            --endY: calc(100px * 4);
-            animation-duration: 7.8s;
-            animation-delay: 2.4s;"></div>
-
-        <div class="star" style="
-            --size: 3px;
-            --color: #ffffff;
-            --startX: 150px;
-            --startY: -300px;
-            --endX: calc(150px * 4);
-            --endY: calc(-300px * 4);
-            animation-duration: 5.9s;
-            animation-delay: 2.7s;"></div>
-
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffffff;
-            --startX: -100px;
-            --startY: 300px;
-            --endX: calc(-100px * 4);
-            --endY: calc(300px * 4);
-            animation-duration: 6.2s;
-            animation-delay: 0.8s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #ffd700;
-            --startX: 350px;
-            --startY: -100px;
-            --endX: calc(350px * 4);
-            --endY: calc(-100px * 4);
-            animation-duration: 7.4s;
-            animation-delay: 1.3s;"></div>
-
-        <div class="star" style="
-            --size: 3px;
-            --color: #fffacd;
-            --startX: -400px;
-            --startY: 200px;
-            --endX: calc(-400px * 4);
-            --endY: calc(200px * 4);
-            animation-duration: 6.8s;
-            animation-delay: 1.6s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #ffffff;
-            --startX: 200px;
-            --startY: -350px;
-            --endX: calc(200px * 4);
-            --endY: calc(-350px * 4);
-            animation-duration: 8.1s;
-            animation-delay: 2.0s;"></div>
-
-        <div class="star" style="
-            --size: 7px;
-            --color: #ffd700;
-            --startX: -250px;
-            --startY: 400px;
-            --endX: calc(-250px * 4);
-            --endY: calc(400px * 4);
-            animation-duration: 7.9s;
-            animation-delay: 1.9s;"></div>
-
-        <div class="star" style="
-            --size: 2px;
-            --color: #fffacd;
-            --startX: 300px;
-            --startY: -200px;
-            --endX: calc(300px * 4);
-            --endY: calc(-200px * 4);
-            animation-duration: 6.5s;
-            animation-delay: 2.4s;"></div>
-
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffffff;
-            --startX: -350px;
-            --startY: 100px;
-            --endX: calc(-350px * 4);
-            --endY: calc(100px * 4);
-            animation-duration: 6.0s;
-            animation-delay: 2.1s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #ffd700;
-            --startX: 100px;
-            --startY: 150px;
-            --endX: calc(100px * 4);
-            --endY: calc(150px * 4);
-            animation-duration: 7.6s;
-            animation-delay: 1.7s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #fffacd;
-            --startX: -450px;
-            --startY: -150px;
-            --endX: calc(-450px * 4);
-            --endY: calc(-150px * 4);
-            animation-duration: 6.7s;
-            animation-delay: 1.5s;"></div>
-
-        <div class="star" style="
-            --size: 3px;
-            --color: #ffffff;
-            --startX: 250px;
-            --startY: 350px;
-            --endX: calc(250px * 4);
-            --endY: calc(350px * 4);
-            animation-duration: 5.9s;
-            animation-delay: 2.3s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #fffacd;
-            --startX: -800px;
-            --startY: 250px;
-            --endX: calc(-800px * 4);
-            --endY: calc(250px * 4);
-            animation-duration: 7.6s;
-            animation-delay: 2.2s;"></div>
-
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffffff;
-            --startX: 850px;
-            --startY: -200px;
-            --endX: calc(850px * 4);
-            --endY: calc(-200px * 4);
-            animation-duration: 6.9s;
-            animation-delay: 1.5s;"></div>
-
-        <div class="star" style="
-            --size: 3px;
-            --color: #ffd700;
-            --startX: -900px;
-            --startY: 50px;
-            --endX: calc(-900px * 4);
-            --endY: calc(50px * 4);
-            animation-duration: 8.1s;
-            animation-delay: 2.6s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #fffacd;
-            --startX: 950px;
-            --startY: 100px;
-            --endX: calc(950px * 4);
-            --endY: calc(100px * 4);
-            animation-duration: 6.7s;
-            animation-delay: 2.0s;"></div>
-
-        <div class="star" style="
-            --size: 7px;
-            --color: #ffffff;
-            --startX: -1000px;
-            --startY: -300px;
-            --endX: calc(-1000px * 4);
-            --endY: calc(-300px * 4);
-            animation-duration: 8.5s;
-            animation-delay: 2.8s;"></div>
-
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffd700;
-            --startX: 1050px;
-            --startY: 200px;
-            --endX: calc(1050px * 4);
-            --endY: calc(200px * 4);
-            animation-duration: 7.3s;
-            animation-delay: 2.4s;"></div>
-
-        <div class="star" style="
-            --size: 5px;
-            --color: #fffacd;
-            --startX: -1100px;
-            --startY: -50px;
-            --endX: calc(-1100px * 4);
-            --endY: calc(-50px * 4);
-            animation-duration: 6.4s;
-            animation-delay: 2.3s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #ffffff;
-            --startX: 1150px;
-            --startY: 350px;
-            --endX: calc(1150px * 4);
-            --endY: calc(350px * 4);
-            animation-duration: 7.8s;
-            animation-delay: 2.5s;"></div>
-
-        <div class="star" style="
-            --size: 6px;
-            --color: #ff6347;
-            --startX: -1200px;
-            --startY: 100px;
-            --endX: calc(-1200px * 4);
-            --endY: calc(100px * 4);
-            animation-duration: 9.0s;
-            animation-delay: 3.0s;"></div>
-        
-        <div class="star" style="
-            --size: 8px;
-            --color: #00ff00;
-            --startX: 1600px;
-            --startY: -600px;
-            --endX: calc(1600px * 4);
-            --endY: calc(-600px * 4);
-            animation-duration: 6.8s;
-            animation-delay: 1.9s;"></div>
-        
-        <div class="star" style="
-            --size: 7px;
-            --color: #ff1493;
-            --startX: 1800px;
-            --startY: -900px;
-            --endX: calc(1800px * 4);
-            --endY: calc(-900px * 4);
-            animation-duration: 7.5s;
-            animation-delay: 2.1s;"></div>
-
-        
-        <div class="star" style="
-            --size: 7px;
-            --color: #add8e6;
-            --startX: -1000px;
-            --startY: 200px;
-            --endX: calc(-1000px * 4);
-            --endY: calc(200px * 4);
-            animation-duration: 8.2s;
-            animation-delay: 2.7s;"></div>
-        
-        <div class="star" style="
-            --size: 4px;
-            --color: #ffff00;
-            --startX: 1100px;
-            --startY: -150px;
-            --endX: calc(1100px * 4);
-            --endY: calc(-150px * 4);
-            animation-duration: 7.0s;
-            animation-delay: 2.2s;"></div>
-        
-        <div class="star" style="
-            --size: 9px;
-            --color: #ff4500;
-            --startX: -1300px;
-            --startY: 50px;
-            --endX: calc(-1300px * 4);
-            --endY: calc(50px * 4);
-            animation-duration: 8.7s;
-            animation-delay: 2.9s;"></div>
-        
-        <div class="star" style="
-            --size: 6px;
-            --color: #dda0dd;
-            --startX: 1200px;
-            --startY: -250px;
-            --endX: calc(1200px * 4);
-            --endY: calc(-250px * 4);
-            animation-duration: 6.6s;
-            animation-delay: 1.8s;"></div>
-        
-        <div class="star" style="
-            --size: 7px;
-            --color: #ffffe0;
-            --startX: -1400px;
-            --startY: 300px;
-            --endX: calc(-1400px * 4);
-            --endY: calc(300px * 4);
-            animation-duration: 8.3s;
-            animation-delay: 2.4s;"></div>
-        
-        <div class="star" style="
-            --size: 5px;
-            --color: #ffb6c1;
-            --startX: 1000px;
-            --startY: -100px;
-            --endX: calc(1000px * 4);
-            --endY: calc(-100px * 4);
-            animation-duration: 7.2s;
-            animation-delay: 2.0s;"></div>
-        
-        <div class="star" style="
-            --size: 8px;
-            --color: #b0e0e6;
-            --startX: -1100px;
-            --startY: 50px;
-            --endX: calc(-1100px * 4);
-            --endY: calc(50px * 4);
-            animation-duration: 7.9s;
-            animation-delay: 2.6s;"></div>
-
-    </div>
-
-    <div class="centered-content">
-        <a href="resume.html" target="_blank">Extended Resume</a>
+    <div class="container">
+        <div class="name">
+            Neil Keohane
+        </div>
+        <div class="description">
+            Recent Computer Science graduate with a strong foundation in software engineering and a growing expertise in DevOps. I have hands-on experience developing and deploying internal web applications using technologies like .NET, React, and Python. My work has included automating tasks with PowerShell, implementing CI/CD pipelines with Docker, and leveraging GitHub Actions to streamline development workflows. I’m driven by a passion for solving complex problems, continuously improving processes, and I’m excited to bring these skills to a full-time software engineering role.
+        </div>
         <div class="social-links">
             <a href="https://github.com/NeilKeohane" target="_blank" aria-label="GitHub">
-                <img src="github.png" alt="GitHub Logo" class="github-logo">
+                <i class="bi bi-github"></i>
             </a>
-            
             <a href="mailto:keohane.neil@yahoo.com" target="_blank" aria-label="Email">
-                <img src="mail.png" alt="Email Logo" class="mail-logo">
+                <i class="bi bi-envelope"></i>
             </a>
-            
             <a href="https://www.linkedin.com/in/NeilFKeohane" target="_blank" aria-label="LinkedIn">
-                <img src="linkedin.png" alt="LinkedIn Logo" class="linkedin-logo">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="resume.html" target="_blank" aria-label="Resume">
+                <i class="bi bi-file-earmark-person"></i>
             </a>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
