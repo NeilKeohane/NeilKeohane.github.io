@@ -35,14 +35,8 @@
 
         .container {
             max-width: 800px;
-            width: 100%;
+            width: 90%;
             padding: 20px;
-        }
-
-        .name {
-            font-size: 36px;
-            font-family: 'CustomFontBold', sans-serif; /* Apply custom bold font */
-            margin-bottom: 20px;
         }
 
         .description {
@@ -53,6 +47,7 @@
 
         .social-links {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             font-size: 24px;
@@ -66,13 +61,20 @@
         .social-links a:hover {
             color: #f0f0f0;
         }
+
+        @media (max-width: 767px) {
+            .description {
+                font-size: 18px;
+            }
+
+            .social-links {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="name">
-            Neil Keohane
-        </div>
         <div class="description">
             Recent Computer Science graduate with a strong foundation in software engineering and a growing expertise in DevOps. I have hands-on experience developing and deploying internal web applications using technologies like .NET, React, and Python. My work has included automating tasks with PowerShell, implementing CI/CD pipelines with Docker, and leveraging GitHub Actions to streamline development workflows. I’m driven by a passion for solving complex problems, continuously improving processes, and I’m excited to bring these skills to a full-time software engineering role.
         </div>
