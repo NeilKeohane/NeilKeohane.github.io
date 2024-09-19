@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         body {
-            background-color: #F0F0F5; /* Light gray-blue background similar to iOS */
+            background-color: #F0F0F5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -22,15 +22,15 @@
             background-color: white;
             border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* iOS-style shadow */
-            border: 1px solid #D0D0D5; /* Slight border for a clean look */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #D0D0D5;
         }
 
         img {
             width: 150px;
             height: 150px;
             margin-bottom: 20px;
-            border-radius: 22px; /* Rounded corners like iOS icons */
+            border-radius: 22px;
         }
 
         .title {
@@ -39,33 +39,37 @@
             margin-bottom: 15px;
         }
 
-        .app-store, .email, .privacy-policy {
-            font-size: 16px; /* Default font size */
-            color: #007AFF; /* iOS system blue color */
+        .app-store {
+            margin-bottom: 20px;
+        }
+
+        .app-store img {
+            width: 160px;
+            height: auto;
+        }
+
+        .email, .privacy-policy {
+            font-size: 16px;
+            color: #007AFF;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
-            margin: 10px 0; /* Consistent vertical margin */
-        }
-
-        .app-store {
-            font-size: 20px; /* Largest font size */
-            margin-bottom: 20px; /* Extra space below */
+            margin: 10px 0;
         }
 
         .privacy-policy {
-            font-size: 14px; /* Smallest font size */
-            margin-top: 10px; /* Space above the privacy policy */
+            font-size: 14px;
+            margin-top: 10px; 
         }
 
-        .app-store a, .email a, .privacy-policy a {
-            text-decoration: none; /* Remove underline */
-            color: #007AFF; /* Consistent blue color */
+        .email a, .privacy-policy a {
+            text-decoration: none;
+            color: #007AFF;
         }
 
-        .app-store a:hover, .email a:hover, .privacy-policy a:hover {
-            text-decoration: underline; /* Add underline on hover */
+        .email a:hover, .privacy-policy a:hover {
+            text-decoration: underline;
         }
 
         .bi {
@@ -78,11 +82,13 @@
     <div class="container">
         <div class="title">SimplePod</div>
         <img src="simplepod-app-icon.jpg" alt="App Icon">
+        
         <div class="app-store">
-            <a href="https://www.apple.com" target="_blank">
-                <i class="bi bi-app-indicator"></i> Download on the App Store
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank">
+                <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png" alt="Download on the App Store">
             </a>
         </div>
+        
         <p class="email">
             <i class="bi bi-envelope"></i> keohane.neil@yahoo.com
         </p>
